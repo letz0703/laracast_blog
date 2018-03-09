@@ -1,5 +1,7 @@
 <?php
 
+use App\Task;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', function () {
-	$tasks = DB::table('tasks')->latest()->get();
+	// $tasks = DB::table('tasks')->latest()->get();
+	$tasks = Task::all();
 	// return $tasks;
     return view('tasks.index',compact('tasks'));
 });
