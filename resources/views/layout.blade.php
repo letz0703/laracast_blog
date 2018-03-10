@@ -22,6 +22,7 @@
 	  @include('layouts.header')
 	  	@include('layouts.nav')
 	  	@yield('content')
+      <br>
       @include('layouts.footer')
     </div>
     </body>
