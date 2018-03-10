@@ -17,18 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tasks', function () {
-	// $tasks = DB::table('tasks')->latest()->get();
-	$tasks = Task::all();
-	// return $tasks;
-    return view('tasks.index',compact('tasks'));
-});
+Route::get('/tasks','TasksController@index');
 
-Route::get('/tasks/{id}', function ($id) {
-	// $task = DB::table('tasks')->find($id);
-	$task = Task::find($id);
-    return view('tasks.task',compact('task'));
-});
+Route::get('/tasks/{id}', 'TasksController@show');
 
 Route::get('/about', function () {
     return view('/about');
