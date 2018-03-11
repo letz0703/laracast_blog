@@ -25,16 +25,22 @@ class PostController extends Controller
     public function store(Request $request)
     {
     	// dd(request()->all());
+
     	// $post = new Post;
-    	Post::create([
-    		'title' => $request->input('title'),
-    		'body' => $request->input('body')
-    	]);
-    	// $post['title'] = $request->title;
-    	// $post['body'] = $request->body;
+    	// $post['title'] = $request->input('title');
+    	// $post['body'] = $request->input('body');
 
     	// $post->save();
 
+    	// Post::create($request->all());
+    	// Post::create([
+    	// 	'title'=>$request->title,
+    	// 	'body' =>$request->body
+    	// ]);
+
+    	// Post::create($request->all());
+    	Post::create($request->only('title','body'));
+    	// not working Post::create($request(['title','body']));
     	return redirect('/');
     }
 
