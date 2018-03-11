@@ -4,6 +4,7 @@
 <div class="container">
 	<hr>
 	<form method="post" action="/posts">
+	  {{ csrf_field() }}
 	  <div class="form-group">
 	    <label for="Title">Title</label>
 	    <input type="text" class="form-control" id="title" name="title">
